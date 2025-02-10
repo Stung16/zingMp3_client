@@ -22,9 +22,10 @@ const ControllPlay = () => {
       try {
         setLoading(true);
         const res = await getSong(currentSongID);
-
+        console.log(res);
         if (res?.err === -1110) {
           const res1 = await fetch(res?.url);
+          console.log(res1);
           if (res1?.err === 0) {
             setSource(res1?.data?.["128"]);
           }
